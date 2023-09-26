@@ -3,6 +3,25 @@
 FLaNK Stack with watsonx.ai for google/flan-ul2, google/flan-t5-xxl, Granite and other foundation models
 
 
+### Apache NiFi Flow
+
+![img](https://github.com/tspannhw/FLaNK-watsonx.ai/blob/main/images/watsonainifi.jpg?raw=true)
+
+![img](https://github.com/tspannhw/FLaNK-watsonx.ai/blob/main/images/watsonaixflow2.jpg?raw=true)
+
+![img](https://github.com/tspannhw/FLaNK-watsonx.ai/blob/main/images/watsonflow3.jpg?raw=true)
+
+
+### Output to Slack
+
+![img](https://github.com/tspannhw/FLaNK-watsonx.ai/blob/main/images/watsonllmslack.png?raw=true)
+
+
+### Output to Apache Kafka
+
+![img](https://github.com/tspannhw/FLaNK-watsonx.ai/blob/main/images/watsonxaikafkaresults.png?raw=true)
+
+
 ### Videos
 
 https://www.youtube.com/watch?v=RPz7Xm4fLF4

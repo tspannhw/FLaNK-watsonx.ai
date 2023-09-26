@@ -18,9 +18,18 @@ https://www.youtube.com/watch?v=RPz7Xm4fLF4
 
 * granite-13b-chat-v1   - IBM Granite models (granite-13b-instruct-v1, granite-13b-chat-v1)
 
+
 ### REST Interface
 
 ````
+Get identity Token
+
+https://iam.cloud.ibm.com/identity/token
+
+grant_type=urn%3Aibm%3Aparams%3Aoauth%3Agrant-type%3Aapikey&apikey=<Get Your Own API Key at IBM Cloud>
+
+
+Call Model after identity grant using Identity Token
 
 https://us-south.ml.cloud.ibm.com/ml/v1-beta/generation/text?version=2023-05-29
 
@@ -35,7 +44,7 @@ https://us-south.ml.cloud.ibm.com/ml/v1-beta/generation/text?version=2023-05-29
     "stop_sequences": [],
     "repetition_penalty": 1
   },
-  "project_id": "0ead8ec4-d137-4f9c-8956-50b0da4a7068" }
+  "project_id": "Get-Your-IBM-Cloud-ProjectID" }
 
 ````
 

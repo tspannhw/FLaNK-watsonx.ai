@@ -38,6 +38,15 @@ https://www.youtube.com/watch?v=RPz7Xm4fLF4
 * granite-13b-chat-v1   - IBM Granite models (granite-13b-instruct-v1, granite-13b-chat-v1)
 
 
+### Example Query Input
+
+````
+
+{"inputs":"Please answer to the following question. What is the capital of the United States?"}
+
+````
+
+
 ### REST Interface
 
 ````

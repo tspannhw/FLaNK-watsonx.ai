@@ -80,4 +80,38 @@ https://us-south.ml.cloud.ibm.com/ml/v1-beta/generation/text?version=2023-05-29
 ### References
 
 * https://www.ibm.com/docs/en/watsonx-as-a-service?topic=models-
+* https://www.ibm.com/docs/en/watsonx-as-a-service?topic=models-prompt-tips
+* https://www.ibm.com/docs/en/watsonx-as-a-service?topic=tips-sample-prompts
+
+### Introduction
+
+
+
+Real-time Integration of WatsonX.AI Foundation Models with NiFi
+
+
+Hi, I am Timothy Spann, Principal Developer Advocate for Streaming at Cloudera.   
+
+Today I will show you how to use Cloudera DataFlow powered by Apache NiFi to interact with IBM WatsonX.AI foundation large language models in real-time.   We can work with any of the foundation models such as Google FLAN T5 XXL or  IBM Granite models.
+
+I’ll show you how easy it is to build a real-time data pipeline feeding your like Slack and mobile applications questions directly to secure WatsonX.AI models running in IBM Cloud.   We will handle all the security, management, lineage and governance with Cloudera Data Flow.   As part of decision making we can choose different WatsonX.AI models on the fly based on what type of prompt it is.   For example, if we want to continue a sentence versus answering a question I can pick different models.   For questions answering Google FLAN T5 XXL works well.   If I want to continue sentences I would use one of the IBM Granite models.
+
+You will notice how amazingly fast the WatsonX.AI models return the results we need.   I do some quick enrichment and transformation and then send them out their way to Cloudera Apache Kafka to be used for continuous analytics and distribution to many other applications, systems, platforms and downstream consumers.   We will also output our answers to the original requester which could be someone in a Slack channel or someone in an application.   All of this happens real-time, with no code, full governance, lineage, data management and security at any scale and on any platform.   
+
+The power of IBM and Cloudera together in private, public and hybrid cloud environments for real-time data and AI is just getting started.   Try it today.
+
+### IBM + Cloudera for Apache Kafka
+https://blog.cloudera.com/ibm-technology-chooses-cloudera-as-its-preferred-partner-for-addressing-real-time-data-movement-using-kafka/
+
+### Video
+https://www.youtube.com/watch?v=RPz7Xm4fLF4&t=6s
+
+### Source Code
+https://github.com/tspannhw/FLaNK-watsonx.ai
+
+### Models
+https://www.ibm.com/docs/en/watsonx-as-a-service?topic=models-
+
+
+
  

@@ -21,6 +21,11 @@ FLaNK Stack with watsonx.ai for google/flan-ul2, google/flan-t5-xxl, Granite and
 
 ![img](https://github.com/tspannhw/FLaNK-watsonx.ai/blob/main/images/watsonxaikafkaresults.png?raw=true)
 
+### Docs
+
+https://www.ibm.com/docs/en/watsonx-as-a-service?topic=models-parameters
+
+
 ### Watson SSB SQL
 
 ````

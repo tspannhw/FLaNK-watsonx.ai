@@ -128,6 +128,7 @@ https://us-south.ml.cloud.ibm.com/ml/v1-beta/generation/text?version=2023-05-29
 * https://www.ibm.com/docs/en/watsonx-as-a-service?topic=models-
 * https://www.ibm.com/docs/en/watsonx-as-a-service?topic=models-prompt-tips
 * https://www.ibm.com/docs/en/watsonx-as-a-service?topic=tips-sample-prompts
+* https://www.ibm.com/docs/en/watsonx-as-a-service?topic=models-parameters
 
 ### Introduction
 

@@ -200,4 +200,9 @@ ORDER BY ts DESC
 ````
 
 
+#### References
+
+* https://medium.com/cloudera-inc/ingesting-events-into-dockerized-ibm-db2-jdbc-with-apache-nifi-f0ca452d1351
+
+
  

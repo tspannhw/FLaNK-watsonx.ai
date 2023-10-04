@@ -205,7 +205,7 @@ ORDER BY ts DESC
 * https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories.html/
 * https://travel.state.gov/_res/rss/TAsTWs.xml
 * https://medium.com/@tspann/building-a-travel-advisory-app-with-apache-nifi-in-k8-969b44c84958
-* * https://github.com/tspannhw/FLaNK-TravelAdvisory
+* https://github.com/tspannhw/FLaNK-TravelAdvisory
 
 
 #### References

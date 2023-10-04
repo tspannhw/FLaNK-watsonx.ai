@@ -200,9 +200,25 @@ ORDER BY ts DESC
 ````
 
 
+#### Travel Advisories
+
+* https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories.html/
+* https://travel.state.gov/_res/rss/TAsTWs.xml
+* https://medium.com/@tspann/building-a-travel-advisory-app-with-apache-nifi-in-k8-969b44c84958
+* * https://github.com/tspannhw/FLaNK-TravelAdvisory
+
+
 #### References
 
 * https://medium.com/cloudera-inc/ingesting-events-into-dockerized-ibm-db2-jdbc-with-apache-nifi-f0ca452d1351
+* https://www.youtube.com/watch?v=-r8zf_nfxCw
+* https://medium.com/cloudera-inc/no-code-sentiment-analysis-with-hugging-face-and-apache-nifi-for-article-summaries-cf06d1df1283
+* https://medium.com/cloudera-inc/cdc-not-cat-data-capture-e43713879c03
+* https://medium.com/cloudera-inc/building-a-real-time-data-pipeline-a-comprehensive-tutorial-on-minifi-nifi-kafka-and-flink-ee03ee6722cb
+* https://medium.com/cloudera-inc/building-a-real-time-data-pipeline-a-comprehensive-tutorial-on-minifi-nifi-kafka-and-flink-ee03ee6722cb
+
+
+![arch](https://raw.githubusercontent.com/tspannhw/FLaNK-TravelAdvisory/main/images/travelcloud.png)
 
 
  

@@ -1,6 +1,6 @@
 # FLaNK-watsonx.ai
 
-FLaNK Stack with watsonx.ai for google/flan-ul2, google/flan-t5-xxl, Granite and other foundation models
+FLaNK Stack with watsonx.ai for flan-ul2, flan-t5-xxl, Granite and other foundation models
 
 
 ### Apache NiFi Flow

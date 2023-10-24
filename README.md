@@ -78,6 +78,10 @@ https://www.youtube.com/watch?v=RPz7Xm4fLF4
 * google/flan-ul2
 
 * google/flan-t5-xxl
+  
+* meta-llama/llama-2-70b-chat
+  
+* ibm/mpt-7b-instruct2
 
 * ibm/granite-13b-instruct-v1  - IBM Granite models (granite-13b-instruct-v1, granite-13b-chat-v1)
 

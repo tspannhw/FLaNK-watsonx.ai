@@ -239,6 +239,10 @@ WHERE "summary" IS NOT NULL
 ORDER BY ts DESC 
 ````
 
+### For an example output email
+
+[https://github.com/tspannhw/FLaNK-watsonx.ai/blob/main/example.email.txt](https://github.com/tspannhw/FLaNK-watsonx.ai/blob/main/example.email.txt)
+
 
 #### Travel Advisories
 

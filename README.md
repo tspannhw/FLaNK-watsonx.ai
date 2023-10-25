@@ -30,6 +30,42 @@ https://www.ibm.com/docs/en/watsonx-as-a-service?topic=models-parameters
 
 ````
 
+CREATE TABLE `ssb`.`Meetups`.`watsonairesults` (
+  `date` VARCHAR(2147483647),
+  `x_global_transaction_id` VARCHAR(2147483647),
+  `x_request_id` VARCHAR(2147483647),
+  `cf_ray` VARCHAR(2147483647),
+  `inputs` VARCHAR(2147483647),
+  `created_at` VARCHAR(2147483647),
+  `stop_reason` VARCHAR(2147483647),
+  `x_correlation_id` VARCHAR(2147483647),
+  `x_proxy_upstream_service_time` VARCHAR(2147483647),
+  `message_id` VARCHAR(2147483647),
+  `model_id` VARCHAR(2147483647),
+  `invokehttp_request_duration` VARCHAR(2147483647),
+  `message` VARCHAR(2147483647),
+  `uuid` VARCHAR(2147483647),
+  `generated_text` VARCHAR(2147483647),
+  `transaction_id` VARCHAR(2147483647),
+  `tokencount` VARCHAR(2147483647),
+  `generated_token` VARCHAR(2147483647),
+  `ts` VARCHAR(2147483647),
+  `advisoryId` VARCHAR(2147483647),
+  `eventTimeStamp` TIMESTAMP(3) WITH LOCAL TIME ZONE METADATA FROM 'timestamp',
+  WATERMARK FOR `eventTimeStamp` AS `eventTimeStamp` - INTERVAL '3' SECOND
+) WITH (
+  'deserialization.failure.policy' = 'ignore_and_log',
+  'properties.request.timeout.ms' = '120000',
+  'format' = 'json',
+  'properties.bootstrap.servers' = 'kafka:9092',
+  'connector' = 'kafka',
+  'properties.transaction.timeout.ms' = '900000',
+  'topic' = 'watsonxaillmanswers',
+  'scan.startup.mode' = 'group-offsets',
+  'properties.auto.offset.reset' = 'earliest',
+  'properties.group.id' = 'watsonxaillmconsumer'
+)
+
 CREATE TABLE `ssb`.`Meetups`.`watsonxresults` (
   `date` VARCHAR(2147483647),
   `x_global_transaction_id` VARCHAR(2147483647),

@@ -1,0 +1,251 @@
+Delivered-To: SomeGuysEmail@GuessThatDomain.com
+Received: by 2002:a05:6022:b312:b0:46:f181:1f40 with SMTP id dr18csp2784468lab;
+        Wed, 25 Oct 2023 11:12:02 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IE8NFx3N1lnb+ZAIBRD2zIcFgDaOe6RwskierUS7vfhJd8C5jEJI3uimgPd+EhQ4x1q9KgT
+X-Received: by 2002:a05:600c:19ca:b0:407:da06:2016 with SMTP id u10-20020a05600c19ca00b00407da062016mr545227wmq.12.1698257522277;
+        Wed, 25 Oct 2023 11:12:02 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1698257522; cv=none;
+        d=google.com; s=arc-20160816;
+        b=0v80N5+5WmT47k1WWGxmvP76m0jjEUdlAV+lm03FI6TyGVtj2N6ozbKFcBIl0GLc8a
+         QHMSbb4qCtB7OJ9OWZZSI5fka3VA3Aqk/j+X2Vwja3yyBtyNmEhpDKqd9NSD1t4cuPZu
+         TpN7DrNaBqZ7l/jULwwOOOebo6mjsbqUotvYGZThAAIh7sJyCv3TFc04GVYbBBDv/apx
+         MqP4E5i5ziIpl3fYwTEPwSbSDoM2Pw/8WnE3yOHWgG+rAk5UDnZUf1IvMSgE1s6X23xR
+         tx0U8BSiGcLWnsiuLeELObTJU2JF9/TX3Il0ZkblPVroFfuDM/7DqaByImAaAGJYBraU
+         eawQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:content-transfer-encoding:mime-version:subject
+         :message-id:to:from:date:dkim-signature;
+        bh=Pq36dPkRjNV9Ey3KDVvgawyISelQcvygnIxXDBdlHXk=;
+        fh=L1NqTy/L7aRdgaiDV7MCtAIzKS40pOerbGwZKrIqU5I=;
+        b=BVqRbfULX1Nd/FkjiCI3XAab45PqY3h/Lp6bQCwSgTIfbm/cvjWsaJS/U05FhONA43
+         siFI+p01pbMBzZaskeZo1+oD4TfqIFdViKVQ7LboTXfjDpaH5jAp2EXLHI5wS4lgek68
+         53e3qgnyZi52iMVry7dicmAdr8vlIkf/yqGEzzWQlctmxn7wmSdkcRRbPj3nbwznwi7O
+         uwC21XNSC3iFAlb6LuaGEDJg8Tb5EsHz64C+pvELx4bxnxW844YcYLIv2RgDh+GrlVSc
+         sou9ncYl4wTu7FZyy8kInvNeksOEEV5byr2qDCmWdxnW1fue3zyXI2b7teQdqtrWvhWJ
+         eWbg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@smtpservice.net header.s=mg6ae0.a1-4.dyn header.b=vUX6hNfs;
+       spf=pass (google.com: domain of bt.ke1socwe30=an6paok57xpw=0scmbysybu@return.smtpservice.net designates 103.47.205.5 as permitted sender) smtp.mailfrom="bT.ke1socwe30=an6paok57xpw=0scmbysybu@return.smtpservice.net"
+Return-Path: <bT.ke1socwe30=an6paok57xpw=0scmbysybu@return.smtpservice.net>
+Received: from a2i261.smtp2go.com (a2i261.smtp2go.com. [103.47.205.5])
+        by mx.google.com with ESMTPS id c18-20020adfe712000000b0032d9e62ac46si8020236wrm.93.2023.10.25.11.12.01
+        for <tspann@cloudera.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 25 Oct 2023 11:12:02 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bt.ke1socwe30=an6paok57xpw=0scmbysybu@return.smtpservice.net designates 103.47.205.5 as permitted sender) client-ip=103.47.205.5;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@smtpservice.net header.s=mg6ae0.a1-4.dyn header.b=vUX6hNfs;
+       spf=pass (google.com: domain of bt.ke1socwe30=an6paok57xpw=0scmbysybu@return.smtpservice.net designates 103.47.205.5 as permitted sender) smtp.mailfrom="bT.ke1socwe30=an6paok57xpw=0scmbysybu@return.smtpservice.net"
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=smtpservice.net; s=mg6ae0.a1-4.dyn; x=1698258421; h=Feedback-ID:
+	X-Smtpcorp-Track:Subject:Message-ID:To:From:Date:Reply-To:Sender:
+	List-Unsubscribe; bh=Pq36dPkRjNV9Ey3KDVvgawyISelQcvygnIxXDBdlHXk=; b=vUX6hNfs
+	lhlT+NpA2611glIg5CeDWx9tJByOpVlEu6vnlDqsHm7tqIzPfGOQczb/CZ5+W6/YiQfpWaXyngPKU
+	ZeDTyDsDBqH4VVf/NcFnC7iBVyG2wqC6/j3Pn4YrBwQGXIuRHaDAHedkayeAmYuGs4IK+Sr3rOMZb
+	3+m6+4oCLU2rpLdIj8bmrLNygLgr/FHpQo82XWfYvPHz/BOHLoEcyAZT6JI6bMp+Fo0kUR1u1HOAa
+	nCqArvv6U7fUasNpDpQ2pcynoBy3jigD2oWOuWIu4zoTfqP6FA01Kro19dt4udxeY4Jn+mTBm5qM1
+	W4SqnJAf8EtHdxSF3vZ7zse9hQ==;
+Received: from [10.45.79.114] (helo=SmtpCorp) by smtpcorp.com with esmtpsa
+ (TLS1.3:ECDHE_SECP256R1__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
+ (Exim 4.94.2-S2G) (envelope-from <tim@sparkdeveloper.com>)
+ id 1qviMK-pH9UOx-H1
+ for tspann@cloudera.com; Wed, 25 Oct 2023 18:12:00 +0000
+Received: from [10.211.242.132] (helo=0.0.87.164) by smtpcorp.com with esmtpsa
+ (TLS1.3:ECDHE_X25519__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
+ (Exim 4.96.1-S2G) (envelope-from <tim@sparkdeveloper.com>)
+ id 1qviMJ-g32C8a-2c for tspann@cloudera.com;
+ Wed, 25 Oct 2023 18:11:59 +0000
+Date: Wed, 25 Oct 2023 14:11:58 -0400 (EDT)
+From: tim@somedomain.com
+To: tspann@someotherdomain.com
+Message-ID: <116927601.7.1698257518138@[0.0.87.164]>
+Subject: Important TravelAdvisory (Demo)
+MIME-Version: 1.0
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-Mailer: NiFi
+X-Smtpcorp-Track: 1qviuJg32C8a2c.OEpIutX5OQpAg
+Feedback-ID: 754646m:754646a3lELol:754646swls7URUjT
+X-Report-Abuse: Please forward a copy of this message, including all headers,
+ to <abuse-report@smtp2go.com>
+
+Wed, 25 Oct 2023 18:11:54 GMT
+advisory id 9fda73b1-a22d-4dc2-9a47-d0ff6b971ece
+
+Carry a copy of your travel documentation with you.   Monitor local and nat=
+ional news for information on security situations in Tajikistan.   Check wi=
+th your travel insurance company to determine if your travel is covered und=
+er your policy.   Check with your health care provider to determine if you =
+need any vaccinations or medications for your trip.   Check with your trave=
+l insurance company to determine if
+
+--------------------------------------------------
+
+Standard FlowFile Metadata:
+=09id =3D '6546ea4c-d80a-42ca-958b-7d4a52b295c4'
+=09entryDate =3D 'Wed Oct 25 14:11:58 EDT 2023'
+=09fileSize =3D '2644'
+FlowFile Attributes:
+=09avro.schema =3D '{"type":"record","name":"nifiRecord","namespace":"org.a=
+pache.nifi","fields":[{"name":"date","type":["string","null"]},{"name":"x_g=
+lobal_transaction_id","type":["string","null"],"aliases":["x-global-transac=
+tion-id"]},{"name":"x_request_id","type":["string","null"],"aliases":["x-re=
+quest-id"]},{"name":"cf_ray","type":["string","null"],"aliases":["cf-ray"]}=
+,{"name":"inputs","type":["string","null"]},{"name":"created_at","type":["s=
+tring","null"]},{"name":"stop_reason","type":["string","null"]},{"name":"x_=
+correlation_id","type":["string","null"],"aliases":["x-correlation-id"]},{"=
+name":"x_proxy_upstream_service_time","type":["string","null"],"aliases":["=
+x-proxy-upstream-service-time"]},{"name":"message_id","type":["string","nul=
+l"]},{"name":"model_id","type":["string","null"]},{"name":"invokehttp_reque=
+st_duration","type":["string","null"],"aliases":["invokehttp.request.durati=
+on"]},{"name":"message","type":["string","null"]},{"name":"uuid","type":["s=
+tring","null"]},{"name":"generated_text","type":["string","null"]},{"name":=
+"transaction_id","type":["string","null"],"aliases":["transaction-id"]},{"n=
+ame":"tokencount","type":["string","null"]},{"name":"generated_token","type=
+":["string","null"]},{"name":"ts","type":["string","null"]},{"name":"adviso=
+ryId","type":["string","null"]}]}'
+=09date =3D 'Wed, 25 Oct 2023 18:11:58 GMT'
+=09kafka.consumer.id =3D 'nifi-llm-reader'
+=09invokehttp.tx.id =3D '48ea99db-6455-4874-83f4-ea533277cc2c'
+=09inputs =3D 'Reissued with updates to health information.     Exercise in=
+creased caution in Tajikistan due to  terrorism .    Country Summary:  Terr=
+orist organizations are known to have a presence in the region and have tar=
+geted foreigners and local authorities in recent years, including attacks o=
+n Western bicyclists in 2018 and a government border post in 2019.    Borde=
+r Areas with Afghanistan    The current political situation in Afghanistan =
+creates a challenging and unpredictable environment in the border areas due=
+ to evolving security conditions. The U.S. Embassy recommends that U.S. cit=
+izens reconsider travel near and along Tajikistan=E2=80=99s border with Afg=
+hanistan. U.S. citizens should remain alert and avoid activities that devel=
+op predictable patterns of movement. If documenting travel on social media,=
+ please ensure your privacy settings are appropriately set.   Read the=C2=
+=A0 country information page =C2=A0for additional information on travel to =
+Tajikistan.   If you decide to travel to Tajikistan:     Have a plan to dep=
+art Tajikistan which does not rely on U.S. government assistance.   Enroll =
+in the Smart Traveler Enrollment Program ( STEP ) to receive Alerts and mak=
+e it easier to locate you in an emergency.   Review the=C2=A0 Country Secur=
+ity Report =C2=A0for Tajikistan.   Follow the Department of State on=C2=A0 =
+=C2=A0Facebook =C2=A0and=C2=A0 Twitter .   Visit the CDC page for the lates=
+t=C2=A0 Travel Health Information =C2=A0related to your travel.   Prepare a=
+ contingency plan for emergency situations. Review the=C2=A0 Traveler=E2=80=
+=99s Checklist .'
+=09x-frame-options =3D 'DENY'
+=09uuid =3D '6546ea4c-d80a-42ca-958b-7d4a52b295c4'
+=09path =3D './'
+=09kafka.timestamp =3D '1698172465515'
+=09referrer-policy =3D 'strict-origin'
+=09segment.original.filename =3D 'cf99d991-4665-4753-9319-fbc8955f5699'
+=09kafka.consumer.offsets.committed =3D 'true'
+=09generated_token =3D '151'
+=09cache-control =3D 'no-cache, no-store, must-revalidate'
+=09flow =3D '[{"date":"Wed, 25 Oct 2023 18:11:58 GMT","x-global-transaction=
+-id":"191041b586f585c6d0283a8f6fc26917","x-request-id":"e17e88bf-e55c-4d8e-=
+a8e8-f77210ebee50","cf-ray":"81bc6cb8bc380f53-EWR","inputs":"Reissued with =
+updates to health information.     Exercise increased caution in Tajikistan=
+ due to  terrorism .    Country Summary:  Terrorist organizations are known=
+ to have a presence in the region and have targeted foreigners and local au=
+thorities in recent years, including attacks on Western bicyclists in 2018 =
+and a government border post in 2019.    Border Areas with Afghanistan    T=
+he current political situation in Afghanistan creates a challenging and unp=
+redictable environment in the border areas due to evolving security conditi=
+ons. The U.S. Embassy recommends that U.S. citizens reconsider travel near =
+and along Tajikistan=E2=80=99s border with Afghanistan. U.S. citizens shoul=
+d remain alert and avoid activities that develop predictable patterns of mo=
+vement. If documenting travel on social media, please ensure your priv'
+=09x-request-id =3D 'e17e88bf-e55c-4d8e-a8e8-f77210ebee50'
+=09mime-type =3D 'application/json'
+=09mime.type =3D 'application/json'
+=09Pragma =3D 'no-cache'
+=09cf-cache-status =3D 'DYNAMIC'
+=09strict-transport-security =3D 'max-age=3D31536000; includeSubDomains, ma=
+x-age=3D31536000; includeSubDomains'
+=09pragma =3D 'no-cache'
+=09filename =3D 'cf99d991-4665-4753-9319-fbc8955f5699'
+=09Cache-Control =3D 'no-cache, no-store, must-revalidate'
+=09x-xss-protection =3D '1; mode=3Dblock'
+=09Mime.Type =3D 'application/json'
+=09kafka.leader.epoch =3D '0'
+=09schema.name =3D 'watsonxai'
+=09topic =3D 'watsonxai'
+=09Expires =3D '0'
+=09Content-Language =3D 'en-US'
+=09x-global-transaction-id =3D '191041b586f585c6d0283a8f6fc26917'
+=09Mime-Type =3D 'application/json'
+=09schema =3D 'watsonxai'
+=09server =3D 'cloudflare'
+=09flow.0 =3D '[{"date":"Wed, 25 Oct 2023 18:11:58 GMT","x-global-transacti=
+on-id":"191041b586f585c6d0283a8f6fc26917","x-request-id":"e17e88bf-e55c-4d8=
+e-a8e8-f77210ebee50","cf-ray":"81bc6cb8bc380f53-EWR","inputs":"Reissued wit=
+h updates to health information.     Exercise increased caution in Tajikist=
+an due to  terrorism .    Country Summary:  Terrorist organizations are kno=
+wn to have a presence in the region and have targeted foreigners and local =
+authorities in recent years, including attacks on Western bicyclists in 201=
+8 and a government border post in 2019.    Border Areas with Afghanistan   =
+ The current political situation in Afghanistan creates a challenging and u=
+npredictable environment in the border areas due to evolving security condi=
+tions. The U.S. Embassy recommends that U.S. citizens reconsider travel nea=
+r and along Tajikistan=E2=80=99s border with Afghanistan. U.S. citizens sho=
+uld remain alert and avoid activities that develop predictable patterns of =
+movement. If documenting travel on social media, please ensure your priv'
+=09flow.1 =3D '[{"date":"Wed, 25 Oct 2023 18:11:58 GMT","x-global-transacti=
+on-id":"191041b586f585c6d0283a8f6fc26917","x-request-id":"e17e88bf-e55c-4d8=
+e-a8e8-f77210ebee50","cf-ray":"81bc6cb8bc380f53-EWR","inputs":"Reissued wit=
+h updates to health information.     Exercise increased caution in Tajikist=
+an due to  terrorism .    Country Summary:  Terrorist organizations are kno=
+wn to have a presence in the region and have targeted foreigners and local =
+authorities in recent years, including attacks on Western bicyclists in 201=
+8 and a government border post in 2019.    Border Areas with Afghanistan   =
+ The current political situation in Afghanistan creates a challenging and u=
+npredictable environment in the border areas due to evolving security condi=
+tions. The U.S. Embassy recommends that U.S. citizens reconsider travel nea=
+r and along Tajikistan=E2=80=99s border with Afghanistan. U.S. citizens sho=
+uld remain alert and avoid activities that develop predictable patterns of =
+movement. If documenting travel on social media, please ensure your priv'
+=09fragment.identifier =3D '7dcf48f4-6375-4ba1-9663-eae1becf9492'
+=09x-correlation-id =3D 'aGY1anc-24a4572f932348fa85d6fa720b95df11'
+=09x-proxy-upstream-service-time =3D '124'
+=09stop_reason =3D 'eos_token'
+=09created_at =3D '2023-10-25T18:11:57.986Z'
+=09invokehttp.remote.dn =3D 'CN=3Dus-south.ml.cloud.ibm.com,O=3DInternation=
+al Business Machines Corporation,L=3DArmonk,ST=3DNew York,C=3DUS'
+=09invokehttp.request.duration =3D '3765'
+=09generated_text =3D 'Carry a copy of your travel documentation with you. =
+  Monitor local and national news for information on security situations in=
+ Tajikistan.   Check with your travel insurance company to determine if you=
+r travel is covered under your policy.   Check with your health care provid=
+er to determine if you need any vaccinations or medications for your trip. =
+  Check with your travel insurance company to determine if'
+=09invokehttp.request.url =3D 'https://us-south.ml.cloud.ibm.com/ml/v1-beta=
+/generation/text?version=3D2023-05-29'
+=09Content.Type =3D 'application/json'
+=09transaction-id =3D 'aGY1anc-24a4572f932348fa85d6fa720b95df11'
+=09QueryRecord.Route =3D 'all'
+=09content-type =3D 'application/json'
+=09server-timing =3D 'intid;desc=3D0536bd0d372df5b4'
+=09kafka.max.offset =3D '4239'
+=09Content-Type =3D 'application/json'
+=09invokehttp.response.url =3D 'https://us-south.ml.cloud.ibm.com/ml/v1-bet=
+a/generation/text?version=3D2023-05-29'
+=09advisoryId =3D '9fda73b1-a22d-4dc2-9a47-d0ff6b971ece'
+=09cf-ray =3D '81bc6cb8bc380f53-EWR'
+=09kafka.partition =3D '0'
+=09invokehttp.status.code =3D '200'
+=09Akamai-GRN =3D '0.8583c217.1698257513.18ec8adb'
+=09Connection =3D 'keep-alive'
+=09fragment.index =3D '0'
+=09message_id =3D ''
+=09model_id =3D 'ibm/granite-13b-instruct-v1'
+=09message =3D ''
+=09content.type =3D 'application/json'
+=09Date =3D 'Wed, 25 Oct 2023 18:11:54 GMT'
+=09content-security-policy =3D 'default-src 'none'; script-src 'self'; conn=
+ect-src 'self'; img-src 'self'; style-src 'self'; frame-ancestors 'none'; f=
+orm-action 'self';'
+=09x-content-type-options =3D 'nosniff'
+=09tokencount =3D '661'
+=09kafka.offset =3D '4028'
+=09record.count =3D '1'
+=09kafka.topic =3D 'traveladvisory'
+=09Vary =3D 'Accept-Encoding'
+=09fragment.count =3D '1'
+=09invokehttp.status.message =3D ''
